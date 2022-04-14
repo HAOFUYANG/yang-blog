@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1648602986925,
@@ -144,6 +144,10 @@
                 {
                     "date": 1649925709799,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n   description: 'Just Study',\n   head: [ // 注入到当前页面的 HTML <head> 中的标签\n     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)\n   ],\n+  host: 'localhost', // ip\n+  port: '8101', //端口号 默认为8080\n   base: '/docs/', // 这是部署到github相关的配置\n   markdown: {\n     lineNumbers: true // 代码块显示行号\n   },\n"
+                },
+                {
+                    "date": 1649943329349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)\n   ],\n   host: 'localhost', // ip\n   port: '8101', //端口号 默认为8080\n-  base: '/docs/', // 这是部署到github相关的配置\n+  base: '/yang-blog/', // 这是部署到github相关的配置\n   markdown: {\n     lineNumbers: true // 代码块显示行号\n   },\n   themeConfig: {\n"
                 }
             ],
             "date": 1648602986925,
