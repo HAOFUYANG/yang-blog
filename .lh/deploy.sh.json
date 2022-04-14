@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1649943552002,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649945973419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n # 如果发布到 https://<USERNAME>.github.io\n # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master\n \n # 如果发布到 https://<USERNAME>.github.io/<REPO>\n-git push -f https://github.com/HAOFUYANG/yang-blog.git main:gh-pages\n+git push -f https://github.com/HAOFUYANG/yangBlog.github.io.git main\n \n \n cd -\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649946625682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n # 如果发布到 https://<USERNAME>.github.io\n # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master\n \n # 如果发布到 https://<USERNAME>.github.io/<REPO>\n-git push -f https://github.com/HAOFUYANG/yangBlog.github.io.git main\n+git push -f https://github.com/HAOFUYANG/HAOFUYANG.github.io.git main\n \n \n cd -\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1649943552002,

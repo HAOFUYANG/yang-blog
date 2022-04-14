@@ -6,7 +6,7 @@ module.exports = {
   ],
   host: 'localhost', // ip
   port: '8101', //端口号 默认为8080
-  base: '/yang-blog/', // 这是部署到github相关的配置
+  base: '/', // 这是部署到github相关的配置
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
