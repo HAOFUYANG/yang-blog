@@ -1,0 +1,26 @@
+{
+    "sourceFile": "后序遍历 copy.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1649139935799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649139950122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,11 @@\n   // var inorderTraversal = function(root,result=[]) {\n   //   debugger\n   //   if(root){\n   //     inorderTraversal(root.left,result) \n-  //     result.push(root.val)\n+  //     \n   //     inorderTraversal(root.right,result)\n+        //  result.push(root.val)\n   //   }\n   //   return result\n   // };\n   // inorderTraversal(tree)\n"
+                },
+                {
+                    "date": 1649140004883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,21 +14,21 @@\n     },\n   };\n \n   // 递归\n-  // var inorderTraversal = function(root,result=[]) {\n+  // var postorderTraversal = function(root,result=[]) {\n   //   debugger\n   //   if(root){\n   //     inorderTraversal(root.left,result) \n   //     \n   //     inorderTraversal(root.right,result)\n-        //  result.push(root.val)\n+        //result.push(root.val)\n   //   }\n   //   return result\n   // };\n-  // inorderTraversal(tree)\n-  // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n-  var inorderTraversal = function(root) {\n+  // postorderTraversal(tree)\n+  // console.log('postorderTraversal(tree) :>> ', postorderTraversal(tree));\n+  var postorderTraversal = function(root) {\n     debugger\n     const result = []\n     const func = (root)=>{\n       if(!root) return\n@@ -38,27 +38,13 @@\n     }\n     func(root)\n     return result\n   };\n-  inorderTraversal(tree)\n+  postorderTraversal(tree)\n   //栈\n-  var inorderTraversal = function(root) {\n-    let result = []\n-    let stack = []\n-    let current = root\n-    while(current|| stack.length){\n-      while(current){\n-        console.log('current :>> ', current);\n-        stack.push(current)\n-        console.log('stack :>> ', stack);\n-        current = current.left\n-      }\n-      current = stack.pop()\n-      result.push(current.val)\n-      current = current.right\n-    }\n-    return result\n+  var postorderTraversal = function(root) {\n+   \n   };\n-  inorderTraversal(tree)\n-  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n+  postorderTraversal(tree)\n+  console.log('postorderTraversal(tree) :>> ', postorderTraversal(tree));\n \n </script>\n"
+                }
+            ],
+            "date": 1649139935799,
+            "name": "Commit-0",
+            "content": "<html></html>\n<script type=\"text/javascript\">\n  const tree = {\n    val: \"1\",\n    left: {\n      val: \"2\",\n      left: { val: \"4\", left: null, right: null },\n      right: { val: \"5\", left: null, right: null },\n    },\n    right: {\n      val: \"3\",\n      left: { val: \"6\", left: null, right: null },\n      right: { val: \"7\", left: null, right: null },\n    },\n  };\n\n  // 递归\n  // var inorderTraversal = function(root,result=[]) {\n  //   debugger\n  //   if(root){\n  //     inorderTraversal(root.left,result) \n  //     result.push(root.val)\n  //     inorderTraversal(root.right,result)\n  //   }\n  //   return result\n  // };\n  // inorderTraversal(tree)\n  // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n  var inorderTraversal = function(root) {\n    debugger\n    const result = []\n    const func = (root)=>{\n      if(!root) return\n      func(root.left)\n      result.push(root.val)\n      func(root.right)\n    }\n    func(root)\n    return result\n  };\n  inorderTraversal(tree)\n  //栈\n  var inorderTraversal = function(root) {\n    let result = []\n    let stack = []\n    let current = root\n    while(current|| stack.length){\n      while(current){\n        console.log('current :>> ', current);\n        stack.push(current)\n        console.log('stack :>> ', stack);\n        current = current.left\n      }\n      current = stack.pop()\n      result.push(current.val)\n      current = current.right\n    }\n    return result\n  };\n  inorderTraversal(tree)\n  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n\n</script>\n"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+<html></html>
+<script type="text/javascript">
+  const tree = {
+    val: "1",
+    left: {
+      val: "2",
+      left: { val: "4", left: null, right: null },
+      right: { val: "5", left: null, right: null },
+    },
+    right: {
+      val: "3",
+      left: { val: "6", left: null, right: null },
+      right: { val: "7", left: null, right: null },
+    },
+  };
+  // 递归
+  // var postorderTraversal = function(root,result=[]) {
+  //   debugger
+  //   if(root){
+  //     inorderTraversal(root.left,result) 
+  //     
+  //     inorderTraversal(root.right,result)
+        //result.push(root.val)
+  //   }
+  //   return result
+  // };
+  // postorderTraversal(tree)
+  // console.log('postorderTraversal(tree) :>> ', postorderTraversal(tree));
+  var postorderTraversal = function(root) {
+    const result = []
+    const func = (root)=>{
+      if(!root) return
+      func(root.left)
+      func(root.right)
+      result.push(root.val)
+    }
+    func(root)
+    return result
+  };
+  postorderTraversal(tree)
+  console.log('postorderTraversal(tree) :>> ', postorderTraversal(tree));
+
+  //栈
+  // 弹出栈，放入回收栈，
+  // 先左再右进栈
+  // 循环这个操作
+  var postorderTraversal = function(root) {
+    const result = []
+    if(root!==null) {
+      const stack1 = []
+      const stack2 = []
+      stack1.push(root)
+      while(stack1.length){
+        root= stack1.pop()
+        stack2.push(root)
+        if(root.left!==null) {
+          stack1.push(root.left)
+        }
+        if(root.right!==null) {
+          stack1.push(root.right)
+        }
+      }
+      while(stack2.length) {
+        result.push(stack2.pop().val)
+      }
+    }
+    return result
+  };
+  postorderTraversal(tree)
+  console.log('postorderTraversal(tree) :>> ', postorderTraversal(tree));
+
+</script>

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "deploy.sh",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1649926358742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1649926358742,
+            "name": "Commit-0",
+            "content": "#! /bin/bash\n\n# 确保脚本抛出遇到的错误\nset -e\n\n# 生成静态文件\nnpm run build\n\n# 进入生成的文件夹\ncd docs/.vuepress/dist\n\ngit init\ngit add -A\ngit commit -m 'deploy'\n\n# 如果发布到 https://<USERNAME>.github.io  填写你刚刚创建的仓库地址\ngit push -f https://github.com/HAOFUYANG/myVuePress.git master\n\ncd -\n"
+        }
+    ]
+}

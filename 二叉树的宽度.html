@@ -1,0 +1,81 @@
+<html></html>
+<script type="text/javascript">
+  const tree = {
+    val: "1",
+    left: {
+      val: "2",
+      left: { val: "4", left: null, right: null },
+      right: { val: "5", left: { val: "7", left: null,right:null }, right: null },
+    },
+    right: {
+      val: "3",
+      left: { 
+        val: "6", 
+        left: null, 
+        right: { val: "8" ,left: null,right:null}, 
+      },
+      right: { val: "9" ,left: null,right:null},
+    },
+  };
+
+  //二叉树的宽度遍历=>队列queue
+  var widthOfBinaryTree = function (root) {
+    if (root === null) return;
+    const result = [];
+    const queue = [];
+    queue.push(root);
+    while (queue.length) {
+      let current = queue.shift();
+      result.push(current.val);
+      if (current.left !== null) {
+        queue.push(current.left);
+      }
+      if (current.right !== null) {
+        queue.push(current.right);
+      }
+    }
+    return result;
+  };
+  // widthOfBinaryTree(tree);
+  // console.log("widthOfBinaryTree(tree) :>> ", widthOfBinaryTree(tree));
+
+  //二叉树的最大宽度
+  var maxWidthOfBinaryTree = function (root) {
+    if (root === null) return 0;
+    let queue = [];
+    let levelMap = new Map(); //hashMap
+    levelMap.set(root, 1);
+    let curLevel = 1; //当前在哪1层
+    let curLevelNodes = 0; //当前层发现的节点数量
+    let max = 1; //定义最大节点数量1
+    queue.push(root);
+    while (queue.length) {
+      let current = queue.shift();
+      //每弹出一个节点时，先得到节点所在层数
+      //curNodeLevel=>节点所在层数
+      let curNodeLevel = levelMap.get(current);
+      //节点所在的层数等于当前在的层数时
+      if (curNodeLevel == curLevel) {
+        curLevelNodes++;
+      } else {
+        //得出当前循环时的最大值
+        max = Math.max(max, curLevelNodes);
+        curLevel++;
+        curLevelNodes = 1;
+      }
+      console.log('curLevelNodes :>> ', curLevelNodes);
+      if (current.left !== null) {
+        //current.left所在层数就是当前节点所在层数的下一层
+        levelMap.set(current.left, curNodeLevel + 1);
+        queue.push(current.left);
+      }
+      if (current.right !== null) {
+        levelMap.set(current.right, curNodeLevel + 1);
+        queue.push(current.right);
+      }
+    }
+    return max;
+  };
+  maxWidthOfBinaryTree(tree);
+  console.log("maxWidthOfBinaryTree(tree) :>> ", maxWidthOfBinaryTree(tree));
+</script>

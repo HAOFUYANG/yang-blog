@@ -1,0 +1,182 @@
+{
+    "sourceFile": "docs/dataStructure/二叉树/前序遍历.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1648987707022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648987955238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n+\n+### LeetCode\n"
+                },
+                {
+                    "date": 1648987982089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-### LeetCode\n+### 题目\n+\n+> LeeCode\n"
+                },
+                {
+                    "date": 1648987996954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n ---\n \n ### 题目\n \n-> LeeCode\n+- LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648988114049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n+> 前序遍历(先序遍历):根左右\n+\n ### 题目\n \n - LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648988140796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n+###\n+\n > 前序遍历(先序遍历):根左右\n \n-### 题目\n-\n - LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648988152623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n ---\n \n ###\n \n-> 前序遍历(先序遍历):根左右\n+- 前序遍历(先序遍历):根左右\n \n - LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648988216766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-###\n+### 步骤\n \n-- 前序遍历(先序遍历):根左右\n+前序遍历(先序遍历):根左右\n \n - LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648988235538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n ---\n \n ### 步骤\n \n-前序遍历(先序遍历):根左右\n+- 前序遍历(先序遍历):根左右\n \n+### 题目\n+\n - LeeCode 144 题\n"
+                },
+                {
+                    "date": 1648996303399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,4 +8,20 @@\n \n ### 题目\n \n - LeeCode 144 题\n+\n+```js\n+const tree = {\n+  val: \"1\",\n+  left: {\n+    val: \"2\",\n+    left: { val: \"4\", left: null, right: null },\n+    right: { val: \"5\", left: null, right: null },\n+  },\n+  right: {\n+    val: \"3\",\n+    left: { val: \"6\", left: null, right: null },\n+    right: { val: \"7\", left: null, right: null },\n+  },\n+};\n+```\n"
+                },
+                {
+                    "date": 1648996357118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n - 前序遍历(先序遍历):根左右\n \n ### 题目\n \n-- LeeCode 144 题\n+#### LeeCode 144 题\n \n ```js\n const tree = {\n   val: \"1\",\n"
+                },
+                {
+                    "date": 1648996366966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n - 前序遍历(先序遍历):根左右\n \n ### 题目\n \n-#### LeeCode 144 题\n+#### 【LeeCode 144 题】\n \n ```js\n const tree = {\n   val: \"1\",\n"
+                },
+                {
+                    "date": 1648996373948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n - 前序遍历(先序遍历):根左右\n \n ### 题目\n \n-#### 【LeeCode 144 题】\n+#### [LeeCode 144 题]\n \n ```js\n const tree = {\n   val: \"1\",\n"
+                },
+                {
+                    "date": 1648996401176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n - 前序遍历(先序遍历):根左右\n \n ### 题目\n \n-#### [LeeCode 144 题]\n+#### LeeCode 144 题\n \n ```js\n const tree = {\n   val: \"1\",\n"
+                },
+                {
+                    "date": 1648996413481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,4 +24,6 @@\n     right: { val: \"7\", left: null, right: null },\n   },\n };\n ```\n+\n+--- 递归\n"
+                },
+                {
+                    "date": 1648996437699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,25 @@\n   },\n };\n ```\n \n---- 递归\n+- 递归\n+\n+```js\n+var preorderTraversal = function (root) {\n+  if (!root.val) return [];\n+  const result = [];\n+  var func = (node) => {\n+    if (node) {\n+      // 先添加根节点\n+      result.push(node.val);\n+      //遍历左子树\n+      func(node.left);\n+      //遍历右子树\n+      func(node.right);\n+    }\n+  };\n+  func(root);\n+  return result;\n+};\n+preorderTraversal(tree);\n+```\n"
+                },
+                {
+                    "date": 1648996469555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,4 +46,10 @@\n   return result;\n };\n preorderTraversal(tree);\n ```\n+\n+- 队列\n+\n+```js\n+\n+```\n"
+                },
+                {
+                    "date": 1648998492332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,24 @@\n };\n preorderTraversal(tree);\n ```\n \n-- 队列\n+- 栈\n \n ```js\n-\n+var preorderTraversal = function (root) {\n+  if (!root.val) return [];\n+  let result = [];\n+  let stack = [root];\n+  while (stack.length) {\n+    //出栈\n+    let o = stack.pop();\n+    console.log(\"o :>> \", o);\n+    result.push(o.val);\n+    //入栈\n+    o.right && stack.push(o.right);\n+    o.left && stack.push(o.left);\n+  }\n+  return result;\n+};\n+preorderTraversal(tree);\n ```\n"
+                },
+                {
+                    "date": 1648998517402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,13 @@\n ```js\n var preorderTraversal = function (root) {\n   if (!root.val) return [];\n   let result = [];\n-  let stack = [root];\n+  let stack = [root]; //定义栈\n   while (stack.length) {\n     //出栈\n     let o = stack.pop();\n+    s;\n     console.log(\"o :>> \", o);\n     result.push(o.val);\n     //入栈\n     o.right && stack.push(o.right);\n"
+                },
+                {
+                    "date": 1648998539606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,8 @@\n   let stack = [root]; //定义栈\n   while (stack.length) {\n     //出栈\n     let o = stack.pop();\n-    s;\n-    console.log(\"o :>> \", o);\n     result.push(o.val);\n     //入栈\n     o.right && stack.push(o.right);\n     o.left && stack.push(o.left);\n"
+                },
+                {
+                    "date": 1648999680443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,5 +65,22 @@\n   }\n   return result;\n };\n preorderTraversal(tree);\n+//或者\n+var preorderTraversal = function (root) {\n+  const result = [];\n+  const stack = [];\n+  let current = root;\n+  while (current || stack.length > 0) {\n+    while (current) {\n+      result.push(current.val);\n+      stack.push(current);\n+      current = current.left;\n+    }\n+    current = stack.pop();\n+    current = current.right;\n+  }\n+  return result;\n+};\n+preorderTraversal(tree);\n ```\n"
+                },
+                {
+                    "date": 1648999717576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   },\n };\n ```\n \n-- 递归\n+递归\n \n ```js\n var preorderTraversal = function (root) {\n   if (!root.val) return [];\n@@ -47,10 +47,15 @@\n };\n preorderTraversal(tree);\n ```\n \n-- 栈\n+栈（非递归实现）\n \n+- 取根节点为目标节点，开始遍历\n+- 1.左孩子入栈 -> 直至左孩子为空的节点\n+- 2.栈顶节点的右节点为空或右节点被访问过 -> 节点出栈并访问他，将节点标记为已访问\n+- 3.栈顶节点的右节点不为空且未被访问，以右孩子为目标节点，再依次执行 1、2、3\n+\n ```js\n var preorderTraversal = function (root) {\n   if (!root.val) return [];\n   let result = [];\n"
+                },
+                {
+                    "date": 1648999752181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n };\n preorderTraversal(tree);\n ```\n \n-栈（非递归实现）\n+**栈（非递归实现）**\n \n - 取根节点为目标节点，开始遍历\n - 1.左孩子入栈 -> 直至左孩子为空的节点\n - 2.栈顶节点的右节点为空或右节点被访问过 -> 节点出栈并访问他，将节点标记为已访问\n"
+                },
+                {
+                    "date": 1648999771860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   },\n };\n ```\n \n-递归\n+**递归**\n \n ```js\n var preorderTraversal = function (root) {\n   if (!root.val) return [];\n"
+                },
+                {
+                    "date": 1649080782740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n+左神链接https://www.bilibili.com/video/BV13g41157hK?p=6 见 1:07:14\n+\n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n \n"
+                },
+                {
+                    "date": 1649080841967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-左神链接https://www.bilibili.com/video/BV13g41157hK?p=6 见 1:07:14\n+左神链接-> https://www.bilibili.com/video/BV13g41157hK?p=6 见 1:07:14\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649080864542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-左神链接-> https://www.bilibili.com/video/BV13g41157hK?p=6 见 1:07:14\n+左神链接-> **https://www.bilibili.com/video/BV13g41157hK?p=6** 见 1:07:14\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649080874984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-左神链接-> **https://www.bilibili.com/video/BV13g41157hK?p=6** 见 1:07:14\n+左神链接-> ***https://www.bilibili.com/video/BV13g41157hK?p=6*** 见 1:07:14\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081220187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-左神链接-> ***https://www.bilibili.com/video/BV13g41157hK?p=6*** 见 1:07:14\n+[左神课程链接->](***https://www.bilibili.com/video/BV13g41157hK?p=6***) 见 1:07:14\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081239799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-[左神课程链接->](***https://www.bilibili.com/video/BV13g41157hK?p=6***) 见 1:07:14\n+[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081288457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14\n+[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny:sunny\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081294456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny:sunny\n+[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny :sunny\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081303573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny :sunny\n+[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny:\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081309100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n ---\n { \"title\": \"前序遍历\" }\n ---\n \n-[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny:\n+[左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081677946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,12 @@\n ---\n \n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n+- 通过**_递归序_**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n+\n+看了左神的视频，我感觉我悟了\n+\n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n \n"
+                },
+                {
+                    "date": 1649081730426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**_递归序_**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-看了左神的视频，我感觉我悟了\n+<font color=limegreen size=14>看了左神的视频，我感觉我悟了</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081755592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n ---\n \n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n-- 通过**_递归序_**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n+- 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n <font color=limegreen size=14>看了左神的视频，我感觉我悟了</font>\n \n ### 步骤\n"
+                },
+                {
+                    "date": 1649081835592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-<font color=limegreen size=14>看了左神的视频，我感觉我悟了</font>\n+<font color=limegreen size=8>看了左神的视频，我感觉我悟了</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081847789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-<font color=limegreen size=8>看了左神的视频，我感觉我悟了</font>\n+<font color=red size=8>看了左神的视频，我感觉我悟了</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081853146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-<font color=red size=8>看了左神的视频，我感觉我悟了</font>\n+<font color=red size=5>看了左神的视频，我感觉我悟了</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081858739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-<font color=red size=5>看了左神的视频，我感觉我悟了</font>\n+<font color=red size=5>看了左神的视频，我感觉我悟了!</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                },
+                {
+                    "date": 1649081875333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n [左神课程链接->](https://www.bilibili.com/video/BV13g41157hK?p=6) 见 1:07:14 :sunny::sunny::sunny:\n \n - 通过**递归序**实现，前序：在第一次经过自己时 push，中序：在第二次经过自己时 push，后序：在第三次经过自己时 push。\n \n-<font color=red size=5>看了左神的视频，我感觉我悟了!</font>\n+<font color=red size=8>看了左神的视频，我感觉我悟了!</font>\n \n ### 步骤\n \n - 前序遍历(先序遍历):根左右\n"
+                }
+            ],
+            "date": 1648987707022,
+            "name": "Commit-0",
+            "content": "---\n{ \"title\": \"前序遍历\" }\n---\n"
+        }
+    ]
+}

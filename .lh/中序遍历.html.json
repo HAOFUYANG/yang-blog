@@ -1,0 +1,102 @@
+{
+    "sourceFile": "中序遍历.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1649060005016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1649060744133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,14 @@\n   };\n \n   // 递归\n   var preorderTraversal = function(root) {\n-    \n+    let result = []\n+    var func = (node)=>{\n+      console.log('node :>> ', node);\n+    }\n+    func(root)\n+    return result\n   };\n   preorderTraversal(tree)\n   // console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n   //栈\n"
+                },
+                {
+                    "date": 1649061038680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,13 @@\n \n   // 递归\n   var preorderTraversal = function(root) {\n     let result = []\n-    var func = (node)=>{\n-      console.log('node :>> ', node);\n+    var func1=(node)=>{\n+      func1(node.left)\n+      result.push(node.val)\n+      func1(node.right)\n     }\n-    func(root)\n     return result\n   };\n   preorderTraversal(tree)\n   // console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n"
+                },
+                {
+                    "date": 1649061054938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,13 @@\n       func1(node.left)\n       result.push(node.val)\n       func1(node.right)\n     }\n+    func1(root)\n     return result\n   };\n   preorderTraversal(tree)\n-  // console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n+  console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n   //栈\n   var preorderTraversal = function(root) {\n     \n   };\n"
+                },
+                {
+                    "date": 1649061072114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,14 @@\n   // 递归\n   var preorderTraversal = function(root) {\n     let result = []\n     var func1=(node)=>{\n-      func1(node.left)\n+      if(node){\n+        func1(node.left)\n       result.push(node.val)\n       func1(node.right)\n+      }\n+      \n     }\n     func1(root)\n     return result\n   };\n"
+                },
+                {
+                    "date": 1649061101382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,11 @@\n     let result = []\n     var func1=(node)=>{\n       if(node){\n         func1(node.left)\n-      result.push(node.val)\n-      func1(node.right)\n+        result.push(node.val)\n+        func1(node.right)\n       }\n-      \n     }\n     func1(root)\n     return result\n   };\n"
+                },
+                {
+                    "date": 1649061636108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,18 +14,14 @@\n     },\n   };\n \n   // 递归\n-  var preorderTraversal = function(root) {\n-    let result = []\n-    var func1=(node)=>{\n-      if(node){\n-        func1(node.left)\n-        result.push(node.val)\n-        func1(node.right)\n-      }\n+  var preorderTraversal = function(root,result=[]) {\n+    if(root){\n+      inorderTraversal(root.left,array) \n+      array.push(root.val)\n+      inorderTraversal(root.right,array)\n     }\n-    func1(root)\n     return result\n   };\n   preorderTraversal(tree)\n   console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n"
+                },
+                {
+                    "date": 1649061661374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,20 +14,20 @@\n     },\n   };\n \n   // 递归\n-  var preorderTraversal = function(root,result=[]) {\n+  var inorderTraversal = function(root,result=[]) {\n     if(root){\n       inorderTraversal(root.left,array) \n       array.push(root.val)\n       inorderTraversal(root.right,array)\n     }\n     return result\n   };\n-  preorderTraversal(tree)\n-  console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n+  inorderTraversal(tree)\n+  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n   //栈\n-  var preorderTraversal = function(root) {\n+  var inorderTraversal = function(root) {\n     \n   };\n-  preorderTraversal(tree)\n+  inorderTraversal(tree)\n </script>\n"
+                },
+                {
+                    "date": 1649061687921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,11 @@\n \n   // 递归\n   var inorderTraversal = function(root,result=[]) {\n     if(root){\n-      inorderTraversal(root.left,array) \n-      array.push(root.val)\n-      inorderTraversal(root.right,array)\n+      inorderTraversal(root.left,result) \n+      result.push(root.val)\n+      inorderTraversal(root.right,result)\n     }\n     return result\n   };\n   inorderTraversal(tree)\n"
+                },
+                {
+                    "date": 1649064463067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,30 @@\n     },\n   };\n \n   // 递归\n-  var inorderTraversal = function(root,result=[]) {\n-    if(root){\n-      inorderTraversal(root.left,result) \n+  // var inorderTraversal = function(root,result=[]) {\n+  //   debugger\n+  //   if(root){\n+  //     inorderTraversal(root.left,result) \n+  //     result.push(root.val)\n+  //     inorderTraversal(root.right,result)\n+  //   }\n+  //   return result\n+  // };\n+  // inorderTraversal(tree)\n+  // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n+  var inorderTraversal = function(root) {\n+    debugger\n+    const result = []\n+    const func = (node)=>{\n+      if(!node) return\n+      func(node.left)\n       result.push(root.val)\n-      inorderTraversal(root.right,result)\n+      func(root.right)\n     }\n+    \n+    func(root)\n     return result\n   };\n   inorderTraversal(tree)\n   console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n"
+                },
+                {
+                    "date": 1649064469907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   // };\n   // inorderTraversal(tree)\n   // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n   var inorderTraversal = function(root) {\n-    debugger\n+    // debugger\n     const result = []\n     const func = (node)=>{\n       if(!node) return\n       func(node.left)\n"
+                },
+                {
+                    "date": 1649064488354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,10 @@\n     const func = (node)=>{\n       if(!node) return\n       func(node.left)\n       result.push(root.val)\n-      func(root.right)\n+      func(node.right)\n     }\n-    \n     func(root)\n     return result\n   };\n   inorderTraversal(tree)\n"
+                },
+                {
+                    "date": 1649064538638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n   // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n   var inorderTraversal = function(root) {\n     // debugger\n     const result = []\n-    const func = (node)=>{\n-      if(!node) return\n-      func(node.left)\n+    const func = (root)=>{\n+      if(!root) return\n+      func(root.left)\n       result.push(root.val)\n-      func(node.right)\n+      func(root.right)\n     }\n     func(root)\n     return result\n   };\n"
+                },
+                {
+                    "date": 1649064564790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   // };\n   // inorderTraversal(tree)\n   // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n   var inorderTraversal = function(root) {\n-    // debugger\n+    debugger\n     const result = []\n     const func = (root)=>{\n       if(!root) return\n       func(root.left)\n"
+                },
+                {
+                    "date": 1649137017493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,11 +38,18 @@\n     func(root)\n     return result\n   };\n   inorderTraversal(tree)\n-  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n   //栈\n   var inorderTraversal = function(root) {\n-    \n+    let result = []\n+    let stack = []\n+    let current = root\n+    while(current|| stack.length){\n+\n+    }\n+    return result\n   };\n   inorderTraversal(tree)\n+  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));\n+\n </script>\n"
+                },
+                {
+                    "date": 1649137065219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,12 @@\n     let result = []\n     let stack = []\n     let current = root\n     while(current|| stack.length){\n-\n+      while(current){\n+        stack.push(current)\n+        result.push(current.val)\n+      }\n     }\n     return result\n   };\n   inorderTraversal(tree)\n"
+                },
+                {
+                    "date": 1649137076500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,9 @@\n     while(current|| stack.length){\n       while(current){\n         stack.push(current)\n         result.push(current.val)\n+        console.log('stack :>> ', stack);\n       }\n     }\n     return result\n   };\n"
+                },
+                {
+                    "date": 1649137098368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,9 @@\n       while(current){\n         stack.push(current)\n         result.push(current.val)\n         console.log('stack :>> ', stack);\n+        current = current.left\n       }\n     }\n     return result\n   };\n"
+                },
+                {
+                    "date": 1649137174254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,12 +46,14 @@\n     let current = root\n     while(current|| stack.length){\n       while(current){\n         stack.push(current)\n-        result.push(current.val)\n         console.log('stack :>> ', stack);\n         current = current.left\n       }\n+      stack.pop()\n+      result.push(current.val)\n+      current = current.right\n     }\n     return result\n   };\n   inorderTraversal(tree)\n"
+                },
+                {
+                    "date": 1649137264044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         stack.push(current)\n         console.log('stack :>> ', stack);\n         current = current.left\n       }\n-      stack.pop()\n+      current = stack.pop()\n       result.push(current.val)\n       current = current.right\n     }\n     return result\n"
+                },
+                {
+                    "date": 1649137362442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,10 +45,10 @@\n     let stack = []\n     let current = root\n     while(current|| stack.length){\n       while(current){\n+        console.log('current :>> ', current);\n         stack.push(current)\n-        console.log('stack :>> ', stack);\n         current = current.left\n       }\n       current = stack.pop()\n       result.push(current.val)\n"
+                },
+                {
+                    "date": 1649137502606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,9 @@\n     while(current|| stack.length){\n       while(current){\n         console.log('current :>> ', current);\n         stack.push(current)\n+        console.log('stack :>> ', stack);\n         current = current.left\n       }\n       current = stack.pop()\n       result.push(current.val)\n"
+                }
+            ],
+            "date": 1649060005016,
+            "name": "Commit-0",
+            "content": "<html></html>\n<script type=\"text/javascript\">\n  const tree = {\n    val: \"1\",\n    left: {\n      val: \"2\",\n      left: { val: \"4\", left: null, right: null },\n      right: { val: \"5\", left: null, right: null },\n    },\n    right: {\n      val: \"3\",\n      left: { val: \"6\", left: null, right: null },\n      right: { val: \"7\", left: null, right: null },\n    },\n  };\n\n  // 递归\n  var preorderTraversal = function(root) {\n    \n  };\n  preorderTraversal(tree)\n  // console.log('preorderTraversal(tree) :>> ', preorderTraversal(tree));\n  //栈\n  var preorderTraversal = function(root) {\n    \n  };\n  preorderTraversal(tree)\n</script>\n"
+        }
+    ]
+}
