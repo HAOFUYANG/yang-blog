@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1649926358742,
@@ -24,6 +24,10 @@
                 {
                     "date": 1649942057080,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n # 如果发布到 https://<USERNAME>.github.io\n # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master\n \n # 如果发布到 https://<USERNAME>.github.io/<REPO>\n-git push -f git@github.com:HAOFUYANG/my-coding-vuepress.git main:gh-pages\n+git push -f https://github.com/HAOFUYANG/yang-blog.github.io.git main:gh-pages\n \n \n cd -\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1649943242355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n # 如果发布到 https://<USERNAME>.github.io\n # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master\n \n # 如果发布到 https://<USERNAME>.github.io/<REPO>\n-git push -f https://github.com/HAOFUYANG/yang-blog.github.io.git main:gh-pages\n+git push -f https://github.com/HAOFUYANG/yang-blog.git main:gh-pages\n \n \n cd -\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1649926358742,
