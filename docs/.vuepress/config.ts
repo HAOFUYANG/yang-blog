@@ -2,6 +2,7 @@ import { ThemeConfig } from "vuepress-theme-vt";
 import { defineConfig4CustomTheme } from "vuepress/config";
 
 export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
+  base: "/blog/",
   theme: "vt",
   title: "yangのBlog",
   description: "Just Study",
