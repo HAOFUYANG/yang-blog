@@ -53,16 +53,19 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
           ],
         },
         {
-          title: "Vue",
+          title: "Vue2",
           children: [
-            "/webstudy/Vue/MVVM",
-            "/webstudy/Vue/Vue生命周期",
-            "/webstudy/Vue/Vue响应式原理",
-            "/webstudy/Vue/组件通讯",
-            "/webstudy/Vue/computed和watch",
-            "/webstudy/Vue/虚拟dom和diff算法",
-            "/webstudy/Vue/Vue3",
+            "/webstudy/Vue2/MVVM",
+            "/webstudy/Vue2/Vue生命周期",
+            "/webstudy/Vue2/Vue响应式原理",
+            "/webstudy/Vue2/组件通讯",
+            "/webstudy/Vue2/computed和watch",
+            "/webstudy/Vue2/虚拟dom和diff算法",
           ],
+        },
+        {
+          title: "Vue3",
+          children: ["/webstudy/Vue3/vue3相比于vue2"],
         },
         {
           title: "Webpack",
