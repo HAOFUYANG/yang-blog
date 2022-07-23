@@ -1,0 +1,9 @@
+<html></html>
+<script>
+function flatten(arr){
+  return arr.reduce((accumulator,currentValue,currentIndex)=>{
+    return accumulator.concat(Array.isArray(currentValue)?flatten(currentValue):currentValue)
+  },[])
+}
+console.log(flatten([1,[2,3],[4,5,[6,7]]]))
+</script>

@@ -1,0 +1,33 @@
+<html>
+  手写bind
+</html>
+<script type="text/javascript">
+  Function.prototype.newbind = function () {
+    const args = Array.prototype.slice.call(arguments);
+    //获取数组的第一项
+    const t = args.shift();
+    //fn.bind()中的fn
+    const self = this;
+    //返回函数
+    return function () {
+      return self.apply(t, args);
+    };
+  };
+  function fn1(a, b, c) {
+    console.log("this :>> ", this);
+    return "this.is fn1";
+  }
+  const fn2 = fn1.newbind({ x: 100 }, 1, 2, 3, 4);
+  const res = fn2();
+  console.log("res :>> ", res);
+  
+  function print(fn){
+  const a = 200
+  fn()
+}
+const a = 100
+function fn(){
+  console.log(a)
+}
+print(fn) //100
+</script>

@@ -1,0 +1,12 @@
+<html>A</html>
+<button type="submit" id="btn">传递</button>
+<script>
+const btn = document.getElementById('btn')
+btn.addEventListener('click',()=>{
+  const info = {
+    name:'yang',
+    age:18
+  }
+  localStorage.setItem('info',JSON.stringify(info))
+})
+</script>

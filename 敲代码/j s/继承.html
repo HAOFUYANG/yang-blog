@@ -1,0 +1,38 @@
+<html></html>
+<script type="text/javascript">
+  //父类
+  // class People {
+  //   constructor(name, age) {
+  //     this.name = name;
+  //     this.age = age;
+  //   }
+  //   say() {
+  //     console.log(`姓名${this.name},年龄${this.age}`);
+  //   }
+  // }
+  // //子类
+  // class Student extends People {
+  //   constructor(name, age, number) {
+  //     super(name, age); //super会调用父类的构造函数方法
+  //     this.number = number;
+  //   }
+  //   sayHi() {
+  //     console.log(`姓名${this.name},年龄${this.age},学号${this.number}`);
+  //   }
+  // }
+  // const a = new Student("yang", 18, 1);
+  // a.sayHi(); //
+  // a.__proto__.sayHi(); //
+
+  let info = {
+  name:'yang',
+  get:function(){
+    return ()=>{ //通过箭头函数的this指向其上下文
+      console.log('this :>> ', this);
+      return this.name
+    }
+  }
+}
+let a = info.get()
+console.log('a() :>> ', a());
+</script>

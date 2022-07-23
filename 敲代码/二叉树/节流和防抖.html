@@ -1,0 +1,24 @@
+<html>
+  <div style="height:5000px">122</div>
+</html>
+<script>
+  var debounce = function(func, delay) {
+     var timer = null
+     return function() {
+         var that = this;
+         console.log('this :>> ', this);
+         var args = arguments; 
+         console.log('args :>> ', args);
+         if(timer) {
+            clearTimeout(timer);
+         }
+         timer = setTimeout(function() {
+            func.apply(that, args);
+         }, delay)
+     }
+}
+function handle() {
+    console.log('防抖：', Math.random());
+}  
+window.addEventListener('scroll', debounce(handle,500));
+</script>

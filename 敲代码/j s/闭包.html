@@ -1,0 +1,117 @@
+<html></html>
+<script type="text/javascript">
+  //   var Head = (function () {
+  //     var HeadClass = function () {
+  //     }; // 声明HeadClass对象，无法在外部直接调用
+  //     var instance; // 声明一个instance对象
+  //     return function () {
+  //         if (instance) { // 如果已存在 则返回instance
+  //             return instance;
+  //         }
+  //         instance = new HeadClass() // 如果不存在 则new一个
+  //         return instance;
+  //     }
+  // })();
+  // var a = Head();
+  // console.log('a :>> ', a);
+  // var b = new Head();
+  // console.log('b :>> ', b);
+  // console.log(a===b) // true
+  // var a = HeadClass(); // 报错,HeadClass is not defined
+
+  // function between(a, b) {
+  //   return function (v) {
+  //     return v >= a && v <= b;
+  //   };
+  // }
+  // const arr = [2, 5, 6, 7, 8, 3, 11, 2, 1, 8, 9];
+  // const newArr = arr.filter(between(2, 6));
+  // console.log("newArr :>> ", newArr);
+
+  //   const product = [
+  //     {id: 1,name: "a",price: 90,click: 100,},
+  //     {id: 1,name: "b",price: 100,click: 20,},
+  //     {id: 1,name: "c",price: 160,click: 80,},
+  //     {id: 1,name: "d",price: 22,click: 45,},
+  //   ];
+  // function order(field) {
+  //   return function(a,b){
+  //     return a[field]-b[field]
+  //   }
+  // }
+  // const OrderByPrice = product.sort(order('price'))
+  // console.log('OrderByPrice :>> ', OrderByPrice);
+  // const OrderByClick = product.sort(order('click'))
+  // console.log('OrderByClick :>> ', OrderByClick);
+
+  // let info = {
+  //   name:'yang',
+  //   get:function(){
+  //     return this.name
+  //   }
+  // }
+  // console.log('info.get() :>> ', info.get());
+  // let info = {
+  //   name:'yang',
+  //   get:function(){
+  //     return ()=>{
+  //       console.log('this :>> ', this);
+  //       return this.name
+
+  //     }
+  //   }
+  // }
+  // let a = info.get()
+  // console.log('a() :>> ', a());
+
+  // var num = 20;
+  // var obj = {
+  //     num:30,
+  //     fn:(function (num) {
+  //         this.num *= 3;
+  //         num += 15;
+  //         var num = 45;
+  //         return function () {
+  //             this.num *= 4;
+  //             num += 20;
+  //             console.log(num);
+  //         }
+  //     })(num)
+  // }
+  // var fn = obj.fn
+  // fn();
+  // obj.fn()
+  // console.log('window.num :>> ', window.num);
+  // console.log('obj.num :>> ', obj.num);
+
+  // function _new(Fn, ...args) {
+  //   const obj = {};
+  //   obj.__proto__ = Fn.prototype;
+  //   let res = Fn.call(obj, ...args);
+  //   console.log('res :>> ', res);
+  //   if (
+  //     res !== null &&
+  //     (typeof res === "object" || typeof res === "function")
+  //   ) {
+  //     return res;
+  //   }
+  //   return obj;
+  // }
+  function _new(fn, ...arg) {
+    const obj = Object.create(fn.prototype);
+    const res = fn.apply(obj, arg);
+    return res instanceof Object ? res : obj;
+}
+  class Dog {
+    constructor (name,age){
+      this.name = name
+      this.age = age
+    }
+    say(){
+      return this.name + this.age
+    }
+  }
+// let a = new Dog('yang',12)
+  let a = _new(Dog,'yang',12)
+console.log('a :>> ', a);
+</script>

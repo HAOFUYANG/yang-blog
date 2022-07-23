@@ -1,0 +1,19 @@
+<script>
+  const arr = []
+  for (let i = 0; i < 1000 * 10000; i++) {
+    arr.push(i)
+  }
+  const length = arr.length
+
+  console.time('for')
+  let n1 = 0
+  for (let i = 0; i < length; i++) {
+    n1++
+  }
+  console.timeEnd('for') // for: 11.7373046875 ms
+
+  console.time('forEach')
+  let n2 = 0
+  arr.forEach(() => n2++)
+  console.timeEnd('forEach') // forEach: 67.514892578125 ms
+</script>
