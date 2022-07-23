@@ -29,8 +29,13 @@ vue 文档中的原图
 - 当 Observer 中对象的属性被`访问`，则通过 getter 返回值
 - 当 Observer 中对象的属性被`编辑修改`，则通过 setter 更新 data 中的值
 
+思考三个问题？
+1、Vue2的深度监听
+2、对于对象的新增属性，vue如何实现数据绑定
+3、如何对数组进行监听，如下代码中有写到
+
 ```js
-// 触发更新视图
+// 模拟触发更新视图
 function updateView() {
     console.log('视图更新')
 }
@@ -51,7 +56,6 @@ const arrProto = Object.create(oldArrayProperty);
 function defineReactive(target, key, value) {
     // 深度监听
     observer(value)
-
     // 核心 API
     Object.defineProperty(target, key, {
         get() {
@@ -72,7 +76,6 @@ function defineReactive(target, key, value) {
         }
     })
 }
-
 // 监听对象属性
 function observer(target) {
     if (typeof target !== 'object' || target === null) {
@@ -84,7 +87,6 @@ function observer(target) {
     //     updateView()
     //     ...
     // }
-
     if (Array.isArray(target)) {
         target.__proto__ = arrProto
     }
@@ -94,7 +96,6 @@ function observer(target) {
         defineReactive(target, key, target[key])
     }
 }
-
 // 准备数据
 const data = {
     name: 'zhangsan',
@@ -104,25 +105,39 @@ const data = {
     },
     nums: [10, 20, 30]
 }
-
 // 监听数据
 observer(data)
 
-// 测试
-// data.name = 'lisi'
-// data.age = 21
-// // console.log('age', data.age)
-// data.x = '100' // 新增属性，监听不到 —— 所以有 Vue.set
-// delete data.name // 删除属性，监听不到 —— 所有已 Vue.delete
-// data.info.address = '上海' // 深度监听
+
+data.name = 'lisi'
+data.age = 21
+data.x = '100' // 新增属性，监听不到 —— 所以有 Vue.set
+delete data.name // 删除属性，监听不到 —— 所有已 Vue.delete
+data.info.address = '上海' // 深度监听
 data.nums.push(4) // 监听数组
 ```
 
-缺点：
+#### defineProperty的缺点
 
-1. 深度监听需要通过递归实现，比如对象内对象多层嵌套的双向绑定需要进行递归
-2. 无法监听新增属性和删除属性，使用Vue.set,Vue.delete
-3. 无法直接监听数组的一些操作，那为什么我们在使用vue时候是可以监听数组的呢？因为vue对数组的一些方法进行重写，如上代码（为了不污染全局的Array原型，使用Object.create( )创建新的对象，新对象中新增编辑的方法不会污染原生的Array）
+1. 深度监听需要通过`递归实现`，比如对象内对象多层嵌套的双向绑定需要进行递归
+2. 无法监听新增属性和删除属性，需要使用Vue.set,Vue.delete
+3. 无法直接监听数组的一些操作，那为什么我们在使用vue时候是可以监听数组的呢？因为vue对数组的一些方法进行重写，如上代码（为了不污染全局的Array原型，使用Object.create()创建新的对象，新对象中新增编辑的方法不会污染原生的Array）
+
+#### 请问vue2源码重写了哪些数组方法
+
+重写了会改变数组自身的方法
+
+```js
+[
+  'push',//向数组的末尾添加一个或更多元素，并返回新的长度。
+  'pop',//删除数组的最后一个元素并返回删除的元素。
+  'shift',//    删除并返回数组的第一个元素。
+  'unshift',//向数组的开头添加一个或更多元素，并返回新的长度。
+  'reverse',//反转数组的元素顺序。
+  'sort',//对数组进行排序（可以穿进去一个函数）
+  'splice',//splice(n,m)删除数组的第n个到第m-1个（不包含m个）从数组中添加或删除元素。
+]
+```
 
 ### **Dep**依赖管理
 

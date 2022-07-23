@@ -4,11 +4,11 @@ import { defineConfig4CustomTheme } from "vuepress/config";
 export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
   base: "/yang-blog/",
   theme: "vt",
-  title: "yangのBlog",
-  description: "Just Study",
+  title: "yang-blog",
+  description: "Keep Coding",
   themeConfig: {
     enableDarkMode: true,
-    repo: " ",
+    repo: "https://github.com/HAOFUYANG/yang-blog",
     nav: [
       { text: "前端", link: "/webstudy/" },
       { text: "Javascript", link: "/javascript/" },
@@ -50,6 +50,7 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
             "/webstudy/CSS/flex",
             "/webstudy/CSS/文字超出省略",
             "/webstudy/CSS/零碎的知识",
+            "/webstudy/CSS/Retina屏幕1px宽度",
           ],
         },
         {
@@ -65,25 +66,31 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
         },
         {
           title: "Vue3",
-          children: ["/webstudy/Vue3/vue3相比于vue2"],
+          children: ["/webstudy/Vue3/vue3相比于vue2", "/webstudy/Vue3/Proxy"],
         },
         {
-          title: "Webpack",
+          title: "运行环境",
           children: [
-            "/webstudy/Webpack/loader和plugin",
-            "/webstudy/Webpack/vue.config.js配置案例",
-            "/webstudy/Webpack/babel",
+            "/webstudy/运行环境/网页的加载和渲染",
+            "/webstudy/运行环境/性能优化",
+            "/webstudy/运行环境/安全",
           ],
-        },
-        {
-          title: "Vite",
-          children: ["/webstudy/Vite/Vite"],
         },
         {
           title: "Experience",
           children: [
             "/webstudy/Experience/首屏优化",
             "/webstudy/Experience/Vue优化",
+          ],
+        },
+        {
+          title: "工程化",
+          children: [
+            "/webstudy/工程化/前端工程化",
+            "/webstudy/工程化/webpack-loader和plugin",
+            "/webstudy/工程化/babel",
+            "/webstudy/工程化/vue.config.js配置案例",
+            "/webstudy/工程化/vite",
           ],
         },
         {
@@ -98,14 +105,6 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
             "/webstudy/HTTP/浏览器的缓存机制",
             "/webstudy/HTTP/网页多标签通讯",
             "/webstudy/HTTP/webSocket",
-          ],
-        },
-        {
-          title: "运行环境",
-          children: [
-            "/webstudy/运行环境/网页的加载和渲染",
-            "/webstudy/运行环境/性能优化",
-            "/webstudy/运行环境/安全",
           ],
         },
         {
