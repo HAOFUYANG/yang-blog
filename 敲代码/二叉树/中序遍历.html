@@ -1,0 +1,63 @@
+<html></html>
+<script type="text/javascript">
+  const tree = {
+    val: "1",
+    left: {
+      val: "2",
+      left: { val: "4", left: null, right: null },
+      right: { val: "5", left: null, right: null },
+    },
+    right: {
+      val: "3",
+      left: { val: "6", left: null, right: null },
+      right: { val: "7", left: null, right: null },
+    },
+  };
+
+  // 递归
+  // var inorderTraversal = function(root,result=[]) {
+  //   debugger
+  //   if(root){
+  //     inorderTraversal(root.left,result) 
+  //     result.push(root.val)
+  //     inorderTraversal(root.right,result)
+  //   }
+  //   return result
+  // };
+  // inorderTraversal(tree)
+  // console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));
+  var inorderTraversal = function(root) {
+    debugger
+    const result = []
+    const func = (root)=>{
+      if(!root) return
+      func(root.left)
+      result.push(root.val)
+      func(root.right)
+    }
+    func(root)
+    return result
+  };
+  inorderTraversal(tree)
+  //栈
+  var inorderTraversal = function(root) {
+    let result = []
+    let stack = []
+    let current = root
+    while(current|| stack.length){
+      while(current){
+        console.log('current :>> ', current);
+        stack.push(current)
+        console.log('stack :>> ', stack);
+        current = current.left
+      }
+      current = stack.pop()
+      result.push(current.val)
+      current = current.right
+    }
+    return result
+  };
+  inorderTraversal(tree)
+  console.log('inorderTraversal(tree) :>> ', inorderTraversal(tree));
+
+</script>

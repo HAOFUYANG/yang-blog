@@ -1,0 +1,30 @@
+<script lang="ts">
+  /**
+   * @param fn:Function
+   * @returns
+   */
+  function curry(fn) {
+    const fnLength = fn.length;
+    let args = [];
+    function calc(...newArgs) {
+      // 积累参数
+      args = [...args, ...newArgs];
+      if (args.length < fnLength) {
+        // 参数不够，返回函数
+        return calc;
+      } else {
+        console.log("fn :>> ", fn);
+        // 参数够了，返回执行结果
+        console.log("object :>> ", fn.apply(this, args.slice(0, fnLength)));
+        return fn.apply(this, args.slice(0, fnLength));
+      }
+    }
+    return calc;
+  }
+  function add(a, b, c) {
+    return a + b + c;
+  }
+  const curryAdd = curry(add);
+  const res = curryAdd(1)(2)(3);
+  console.info(res);
+</script>

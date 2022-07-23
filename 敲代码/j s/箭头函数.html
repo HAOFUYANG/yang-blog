@@ -1,0 +1,48 @@
+<script>
+//   let info = {
+//   name:'yang',
+//   get:function(){
+//     return ()=>{ //通过箭头函数的this指向其上下文
+//       console.log('this :>> ', this);
+//       return this.name
+//     }
+//   }
+// }
+// let a = info.get()
+// console.log('a :>> ', a);
+// console.log('a() :>> ', a());
+// const fn =()=>{
+//   console.log(arguments)
+// }
+// fn(100,200) //arguments is not defined
+// const fn2 =()=>{
+//   console.log('this :>> ', this);
+// }
+// // fn2()
+// fn2.apply({a:1}) 
+// function fn3(){
+//   console.log('this :>> ', this);
+// }
+// fn3.apply({a:1})
+
+// let obj = {
+//   name:'yang',
+//   say:()=>{
+//     return this.name
+//   }
+// }
+// console.log('obj.say() :>> ', obj.say());
+
+// let obj = {
+//   name:'yang'
+// }
+// obj.__proto__.getName = ()=>{
+//   return this.name
+// }
+// console.log(obj.getName());
+const fn4 = (name)=>{
+  this.name= name
+}
+let f = new fn4('yang')
+console.log('f :>> ', f);
+</script>

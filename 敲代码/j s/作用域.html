@@ -1,0 +1,17 @@
+<html></html>
+<script type="text/javascript">
+//   if(true) {
+//   let a= 100
+// }
+// console.log(a) //报错
+
+function fn1(){
+  console.log(this)
+}
+fn1() //window
+//使用call，apply，bind
+fn1.call({x:100}) //{x:100}
+const fn2 = fn1.bind({x:200})
+fn2()
+</script>
+ 

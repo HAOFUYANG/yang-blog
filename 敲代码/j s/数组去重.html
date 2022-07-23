@@ -1,0 +1,22 @@
+<html></html>
+<script>
+  let array = [
+  { id: 1, name: "a" },
+  { id: 2, name: "b" },
+  { id: 3, name: "c" },
+  { id: 5, name: "d" },
+  { id: 1, name: "e" },
+];
+function unique(arr,key){
+  let obj = {}
+  return arr.reduce((accumulator,currentValue,currentIndex)=>{
+   //当前key键的value值存在于obj函数中时,说明重复
+    if(!obj[currentValue[key]]){
+      obj[currentValue[key]]=true
+      accumulator.push(currentValue)
+    }
+    return accumulator
+  },[])
+}
+console.log('unique(array,id) :>> ', unique(array,'id'));
+</script>

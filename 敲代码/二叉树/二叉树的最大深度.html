@@ -1,0 +1,47 @@
+
+<html></html>
+<script type="text/javascript">
+  const tree = {
+    val: "1",
+    left: {
+      val: "2",
+      left: { val: "4", left: null, right: null },
+      right: { val: "5", left: { val: "7", left: null,right:null }, right: null },
+    },
+    right: {
+      val: "3",
+      left: { 
+        val: "6", 
+        left: null, 
+        right: { val: "8" ,left: null,right:null}, 
+      },
+      right: { val: "9" ,left: null,right:null},
+    },
+  };
+//   var maxDepth = function(root) {
+//   if(!root) return 0
+//   const left = maxDepth(root.left)
+//   debugger
+//   const right = maxDepth(root.right)
+//   return Math.max(left,right)+1
+// };
+var maxDepth = function (root) {
+    if (root == null) return 0;
+    const queue = [];
+    let deep = 0;
+    queue.push(root);
+    while (queue.length) {
+        deep++;
+        debugger
+        const n = queue.length;
+        for (let i = 0; i < n; i++) {
+            const node = queue.shift();
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+    }
+    return deep;
+};
+maxDepth(tree);
+  console.log("maxDepth(tree) :>> ", maxDepth(tree));
+</script>

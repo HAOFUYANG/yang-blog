@@ -1,0 +1,19 @@
+
+<html></html>
+<script type="text/javascript">
+  class Student {
+  //构建实例
+  constructor(name,age){
+    this.name = name
+    this.age=age
+  }
+  say(){
+    console.log(`姓名${this.name},年龄${this.age}`)
+  }
+}
+//通过类声明对象实例
+const a = new Student('yang',22)
+console.log('a :>> ', a);
+a.say()
+console.log('a.constructor :>> ', a.constructor);
+</script>

@@ -1,0 +1,42 @@
+<script>
+  //遍历对象
+  // let obj = {
+  //   name:'yang',
+  //   age:18
+  // }
+  // for(let i in obj){
+  //   console.log('i :>> ', i); // name  age
+  // }
+  // for(let i of obj){
+  //   console.log('i :>> ', i); //obj is not iterable
+  // }
+
+  // 遍历数组
+  // let arr = [1,2,3,4]
+  // for(let item in arr){
+  //   console.log('item :>> ', item); //0 1 2 3
+  // }
+  // for(let item of arr){
+  //   console.log('item :>> ', item); // 1 2 3 4
+  // }
+  
+  // let map = new Map([
+  //   ['name','yang'],
+  //   ['age',18]
+  // ])
+  // for(let i of map){
+  //   console.log('i :>> ', i);
+  // }
+
+  // function fn(){
+  //   for(let i in arguments){
+  //     console.log('i :>> ', i);
+  //   }
+  // }
+  // fn(1,2,3,4)
+
+  let set = new Set([1,2,3,3,4,4,5])
+  for(let i of set) {
+    console.log('i :>> ', i);
+  }
+</script>

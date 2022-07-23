@@ -1,0 +1,26 @@
+<script>
+  let obj1 = {
+    '0x123456':'a',
+    '0x123455':'b',
+    '0x195237':'c',
+    '0x145839':'d'
+  }
+  let obj2 = {
+    '0x123456':'adede',
+    '0x123465':'brrg',
+    '0x195247':'cvvfv',
+    '0x123455':'dcsq'
+  }
+  //根据对象的主键去重，如果对象a中存在与b对象主键相同的元素，则删除掉，最后输出a
+  function getUniqueObj(a,b){
+    for(let i in a) {
+    for(let e in b){
+      if(i===e){
+        delete a[i]
+      }
+    }
+  }
+  return a
+  }
+  console.log(getUniqueObj(obj1,obj2))
+</script>

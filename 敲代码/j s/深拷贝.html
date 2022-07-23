@@ -1,0 +1,28 @@
+<html></html>
+<script type="text/javascript">
+  function deepClone(obj = {}) {
+    if (typeof obj !== "object" || obj == null) {
+      return obj;
+    }
+    let result;
+    if (obj instanceof Array) {
+      result = [];
+    } else {
+      result = {};
+    }
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        //obj.hasOwnProperty(key)? 保证key不是原型的属性
+        //接下来递归
+        result[key] = deepClone(obj[key]);
+      }
+    }
+    return result
+  } 
+  const a = { name: "yang", age: 18, hobby: ["football", "writing"],job:{} };
+  const b = deepClone(a);
+  console.log("b :>> ", b);
+  b.name = 'haha'
+  console.log('b :>> ', b);
+  console.log('a :>> ', a);
+</script>
