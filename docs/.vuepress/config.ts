@@ -13,6 +13,7 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
       { text: "前端", link: "/webstudy/" },
       { text: "Javascript", link: "/javascript/" },
       { text: "数据结构", link: "/dataStructure/" },
+      { text: "v1.0.2", link: "/" },
       // { text: '算法', link: '/algorithm/' },
     ],
     sidebar: {
