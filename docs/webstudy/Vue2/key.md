@@ -131,7 +131,63 @@ key: 2  index: 2 num: 3     key: 2  index: 2 num: 2
                             key: 3  index: 3 num: 3
 ```
 
-### 4、动态组件中的key的使用
+### 4、key的一些使用场景
+
+#### 动态组件中需要强制刷新组件的场景
+
+```html
+<template>
+    <my-component :key="key"></my-component>
+</template>
+<script>
+export default {
+  data(){
+    return{
+      key:new Date().getTime(); 
+    }
+  },
+  watch:{
+    key:{
+     immediate:true,
+     handler(newValue,oldValue){
+       this.key = new Date().getTime()
+     }
+    }
+  }
+}
+</script>
+```
+
+#### keep-alive中的key
+
+```html
+<<template>
+  <keep-alive :include="Components">
+    <router-view :key="key" />
+  </keep-alive>
+</template>
+<script>
+export default {
+  name: 'AppMain',
+  computed: {
+    Components() {
+      return ['A','B']
+    },
+    key() {
+      return this.$route.fullPath
+    }
+  }
+}
+</script>
+```
+
+keep-alive的目的就是缓存组件，
+但如果以下的场景
+
+- 从`/verList/1`到 `verList/2`
+- 从`/verList/id=1`到 `verList/id=2`
+
+当我们使用keep-alive缓存，路由进行切换时，组件内的created, mounted等钩子不会执行, 所以会导致数据不更新,页面不渲染。
 
 ### 5、diff中的key
 
