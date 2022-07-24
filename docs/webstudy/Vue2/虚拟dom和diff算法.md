@@ -8,13 +8,47 @@
 
 ## vdom
 
-Virtual DOM不是真正的dom,他是用 JS 对象模拟 DOM 数据。是 React 最先提出来的概念。
+### 为什么使用vdom？
 
-- 执行 render 函数返回的就是一个 vdom 对象，一般叫做 vnode（虚拟节点），对应 DOM Node每次数据更新（如 React setState）render 函数都会生成 newVnode ，然后前后对比 `diff(vnode, newVnode)`，计算出需要修改的 DOM 节点，再做修改。
+因为js的运行速度比操作dom的速度要快很多，把操作dom这个思路转变为操作js，通过js模拟dom结构，识别dom变更，然后更新视图
+不断的修改真实的DOM会引发回流和重绘，大大降低了页面的渲染能力，而虚拟DOM的产生则是减少了频繁操作DOM而带来的一系列性能问题
 
-### 为什么使用vdom
+### 模拟一个vdom
 
-不断的修改真实的DOM会引发回流和重绘，大大降低了页面的渲染能力，而虚拟DOM的产生则是减少了频繁操作DOM而带来的一系列性能问题。
+```html
+<div id='div1' class='container'>
+ <p>vdom</p>
+ <ul style='font-size:20px'>
+  <li>a</li> 
+ </ul>
+</div>
+
+<script>
+ const dom = {
+   tag:'div',
+  props:{
+   className:'container',
+   id:'div1'
+  },
+  children:[
+   {
+    tag:'p',
+    children:'vdom'
+   },
+   {
+    tag:'ul',
+    props:{style:'font-size:20px'},
+    children:[
+     {
+       tag:'li',
+      children:'a'
+     }
+    ]
+   }
+  ]
+ }
+</script>
+```
 
 ### 框架的价值(Vue,React)
 
@@ -40,13 +74,13 @@ Virtual DOM不是真正的dom,他是用 JS 对象模拟 DOM 数据。是 React �
 - 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较(diff)，记录两棵树差异
 - 把第二棵树所记录的差异应用到第一棵树所构建的真正的DOM树上(patch)，视图就更新了
 
-### 策略
+### diff策略
 
 diff整体策略为：`深度`优先，同层比较，不会跨级，从两边向中间
 
 DOM的频繁改变会产生一系列性能问题，而使用虚拟DOM替代真实DOM，最大的优势在于不断的去修改虚拟DOM后，才会一次性的与真实DOM的差异性做对比，然后只会去修改真实的DOM一次。而这种差异性对比，也就是diff算法。
 
-Vue React 都是用于网页开发，基于 DOM 结构，对 diff 算法都进行了优化（或者简化）,最终把时间复杂度降低到 `O(n)`
+**注：**Vue React 都是用于网页开发，基于 DOM 结构，对 diff 算法都进行了优化（或者简化）,最终把时间复杂度降低到 `O(n)`
 
 - 只在同一层级比较，不夸层级 （DOM 结构的变化，很少有跨层级移动）
 - `tag` 不同则直接删掉重建，不去对比内部细节（DOM 结构变化，很少有只改外层，不改内层）

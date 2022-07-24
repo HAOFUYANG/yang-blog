@@ -16,7 +16,7 @@
 
 ## 2、v-for 使用 key
 
-- 就地复用原则，`key` 可以优化内部的 diff 算法
+- vue默认是就地复用策略，，使用`key` 可以优化内部的 diff 算法
 - 遍历数组时 `key` 不要使用 `index`
 
 ## 3、使用computed缓存

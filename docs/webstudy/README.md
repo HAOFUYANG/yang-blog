@@ -21,12 +21,15 @@
 
 ## VUE2
 
+- [特性](./Vue2/%E7%89%B9%E6%80%A7.md)
 - [MVVM](./Vue2/MVVM.md)
 - [Vue生命周期](./Vue2/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)
 - [Vue响应式原理](./Vue2/Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.md)
 - [组件通讯](./Vue2/%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF.md)
 - [computed和watch](./Vue2/computed%E5%92%8Cwatch.md)
+- [key](./Vue2/key.md)
 - [虚拟dom和diff算法](./Vue2/%E8%99%9A%E6%8B%9Fdom%E5%92%8Cdiff%E7%AE%97%E6%B3%95.md)
+- [vue-router](./Vue2/vue-router.md)
 
 ## VUE3
 
