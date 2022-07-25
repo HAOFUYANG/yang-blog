@@ -92,6 +92,7 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
           children: [
             "/webstudy/工程化/前端工程化",
             "/webstudy/工程化/webpack-loader和plugin",
+            "/webstudy/工程化/webpack 优化",
             "/webstudy/工程化/babel",
             "/webstudy/工程化/vue.config.js配置案例",
             "/webstudy/工程化/vite",
@@ -143,6 +144,8 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
         "/javascript/for in和for of",
         "/javascript/for和forEach谁更快",
         "/javascript/手写getType",
+        "/javascript/虚拟dom转化为真实dom",
+        "/javascript/手写发布订阅",
       ],
       "/dataStructure/": [
         "/dataStructure/",
