@@ -73,6 +73,10 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
           children: ["/webstudy/Vue3/vue3相比于vue2", "/webstudy/Vue3/Proxy"],
         },
         {
+          title: "TS",
+          children: ["/webstudy/TS/vue中ts的使用"],
+        },
+        {
           title: "运行环境",
           children: [
             "/webstudy/运行环境/网页的加载和渲染",

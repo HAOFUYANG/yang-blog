@@ -33,6 +33,10 @@
 - [vue3 相比于 vue2](./Vue3/vue3%E7%9B%B8%E6%AF%94%E4%BA%8Evue2.md)
 - [Proxy](./Vue3/Proxy.md)
 
+## TS
+
+- [vue 中 ts 的使用](./TS/vue%E4%B8%ADts%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+
 ## HTML
 
 - [node 和 element](./HTML%E5%92%8CCSS/node%E5%92%8Celement.md)
