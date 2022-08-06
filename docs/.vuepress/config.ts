@@ -57,6 +57,7 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
         {
           title: "Vue2",
           children: [
+            "/webstudy/Vue2/new Vue()",
             "/webstudy/Vue2/特性",
             "/webstudy/Vue2/MVVM",
             "/webstudy/Vue2/Vue生命周期",

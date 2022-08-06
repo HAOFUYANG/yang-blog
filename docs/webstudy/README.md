@@ -18,6 +18,7 @@
 
 ## VUE2
 
+- [new Vue()](<./Vue2/new%20Vue().md>)
 - [特性](./Vue2/%E7%89%B9%E6%80%A7.md)
 - [MVVM](./Vue2/MVVM.md)
 - [Vue 生命周期](./Vue2/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)
