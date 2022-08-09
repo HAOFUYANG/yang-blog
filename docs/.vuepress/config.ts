@@ -121,7 +121,6 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
           title: "Nodejs",
           children: [
             "/webstudy/Nodejs/nodejs多进程",
-            "/webstudy/Nodejs/中间件",
             "/webstudy/Nodejs/洋葱模型",
           ],
         },
@@ -145,7 +144,6 @@ export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
         "/javascript/Array去重扁平化",
         "/javascript/柯里化函数",
         "/javascript/手写Ajax",
-        "/javascript/add(1)(2)(3)",
         "/javascript/for in和for of",
         "/javascript/for和forEach谁更快",
         "/javascript/手写getType",

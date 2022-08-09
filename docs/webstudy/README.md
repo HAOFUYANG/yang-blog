@@ -85,7 +85,6 @@
 ## Nodejs
 
 - [nodejs 多进程](./Nodejs/nodejs%E5%A4%9A%E8%BF%9B%E7%A8%8B.md)
-- [中间件](./Nodejs/%E4%B8%AD%E9%97%B4%E4%BB%B6.md)⭐
 - [洋葱模型](./Nodejs/%E6%B4%8B%E8%91%B1%E6%A8%A1%E5%9E%8B.md)⭐
 
 ## 项目

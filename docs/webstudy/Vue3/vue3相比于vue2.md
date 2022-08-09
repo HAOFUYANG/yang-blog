@@ -74,6 +74,15 @@ export default defineComponent({
 
 ### 2、生命周期
 
+- beforeCreate===>setup()
+- created =======> setup()
+- beforeMount ===> onBeforeMount
+- mounted =======> onMounted
+- beforeUpdate ===> onBeforeUpdate
+- updated =======>onUpdated
+- beforeDestroy ==> onBeforeUnmount
+- destroyed =====> onUnmounted
+
 ### 3、vue3 对全局 API 的优化
 
 在 Vue3 中，全局和内部 API 都经过了重构，并考虑到了 `tree-shaking `的支持。因此，全局 API 现在只能作为 ES 模块构建的命名导出进行访问
@@ -86,6 +95,12 @@ nextTick(() => {
 ```
 
 ### 4、ts 的支持
+
+#### ts 重构 vue2 的痛
+
+之前通过 ts 重构过 vue2 的项目，总体来说，对原有代码的改变很大，需要使用 vue-class-component 等装饰器，写入 vue2 的 watch,computed,props 等，对原有代码的翻新量很大，就意味着重构的成本很高
+
+`但Vue 3 中，TS 是原生支持的，因为 Vue 3 本身就是用 TS 编写的`
 
 ### 5、Proxy
 
